@@ -1,0 +1,50 @@
+***Project Timer 555
+
+VDD 3 0 dc 2V
+
+Rx 3 2 5k
+Ry 2 11 5k
+Rz 11 0 5k
+Ra 10 6 5k
+Cc 2 0 10n
+R1 3 4 8.2K
+R2 4 1 68k
+C 1 0 500n
+
+.model nmod nmos level=54 verison=4.7 
+.model pmod pmos level=54 verison=4.7
+
+M1 9 1 7 0 nmod w = 100u l = 10u
+M2 8 2 7 0 nmod w = 100u l = 10u
+M3 7 6 0 0 nmod w = 100u l = 10u
+M4 6 6 0 0 nmod w = 100u l = 10u
+M5 14 14 0 0 nmod w = 100u l = 10u
+M6 13 14 0 0 nmod w = 100u l = 10u
+M7 15 6 0 0 nmod w = 100u l = 10u
+M8 17 15 0 0 nmod w = 100u l = 10u
+M9 16 13 0 0 nmod w = 100u l = 10u
+M10 16 17 0 0 nmod w = 100u l = 10u
+M11 17 16 0 0 nmod w = 100u l = 10u
+M12 4 18 0 0 nmod w = 100u l = 10u
+M13 18 17 0 0 nmod w = 100u l = 10u
+M14 5 18 0 0 nmod w = 100u l = 10u
+
+MA 9 8 3 3 pmod w = 50u l = 10u
+MB 8 8 3 3 pmod w = 50u l = 10u
+MC 10 10 3 3 pmod w = 50u l = 10u
+MD 12 10 3 3 pmod w = 50u l = 10u
+ME 14 11 12 12 pmod w = 50u l = 10u
+MF 13 1 12 12 pmod w = 50u l = 10u
+MG 15 9 3 3 pmod w = 50u l = 10u
+MH 13 3 3 3 pmod w = 50u l = 10u
+MI 16 10 3 3 pmod w = 50u l = 10u
+MJ 17 10 3 3 pmod w = 50u l = 10u
+MK 18 17 3 3 pmod w = 50u l = 10u
+ML 5 18 3 3 pmod w = 50u l = 10u 
+
+.tran 0.01ms 200ms
+.control
+run
+plot V(5) 
+.endc
+.end
